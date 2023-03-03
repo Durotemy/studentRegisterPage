@@ -152,8 +152,8 @@ const MyComponent = () => {
   };
 
   return (
-    <div className="w-full bg-[#ede9e9] lg:fixed h-screen ">
-      <div className=" mx-auto h-60  rounded mt-4">
+    <div className="w-full  bg-[#ede9e9] lg:fixed h-screen">
+      <div className=" mx-auto h-60 lg:mt-4 rounded ">
         <p className="ml-16 text-black mr-8 text-2xl lg:text-4xl">
           Student Data Table
         </p>
@@ -161,7 +161,7 @@ const MyComponent = () => {
           <p className="text-black ml-2 lg:ml-14 text-2xl">
             Filter Student By:
           </p>
-          <div className="  lg:grid grid-cols-3 gap-1 mt-10">
+          <div className="md:grid grid-cols-3 gap-1 mt-10 lg:grid grid-cols-2 ">
             <div className=" mx-auto w-80">
               <Select
                 placeholder={<div>Select age</div>}
@@ -171,7 +171,7 @@ const MyComponent = () => {
                 styles={customStyles}
               />
             </div>
-            <div className=" mx-auto w-80 h-20">
+            <div className=" mx-auto w-80  h-20">
               <Select
                 placeholder={<div>Select State</div>}
                 className="h-20"
@@ -209,7 +209,7 @@ const MyComponent = () => {
               className="h-[58px] w-80"
               onClick={handleRefresh}
             >
-              Refrech
+              Refresh
             </button>
             </div>
             
@@ -217,21 +217,21 @@ const MyComponent = () => {
         </div>
       </div>
 
-      <div className="lg:mt-36 mt-96 lg:w-full">
-        <div className="w-11/12 bg-[#FFFFFF] rounded mx-auto lg:overflow-scroll h-80">
-          <div className="overflow-x-auto">
-            <table className=" lg:w-full lg:table-auto  border-separate border-spacing-px scrollbar  scrollbar-thumb-gray-900 scrollbar-track-gray-100">
-              <thead>
-                <tr className="text-1xl lg:p-4 bg-[#F9F9FA] w-full">
+      <div className="lg:mt-36 mt-96 lg:w-full scrollbar md:w-12/12 md:mt-52">
+        <div className="w-11/12  bg-[#FFFFFF] rounded mx-auto lg:overflow-scroll h-80 scrollbar-thumb-rounded scrollbar-thin scrollbar-thumb-green-500 scrollbar-track-gray-100">
+          <div className="overflow-x-auto scrollbar ">
+            <table className=" lg:w-full lg:table-auto md:w-full  border-separate border-spacing-px scrollbar">
+              <thead className="scrollbar ">
+                <tr className="text-1xl lg:p-4 bg-[#F9F9FA] w-full scrollbar">
                   <th className="lg:px-8 text-sm lg:p-4 w-auto	 border-b">
                     S/N
                   </th>
-                  <th className=" w-1	 text-sm border-b">Surname</th>
+                  <th className=" w-1	 text-sm border-b ">Surname</th>
                   <th className="lg:px-4 text-sm lg:w-auto border-b">
                     Firstname
                   </th>
                   <th className="lg:px-4 text-sm lg:w-auto border-b">Age</th>
-                  <th className="lg:px-4 text-sm lg:w-auto border-b">Gender</th>
+                  <th className="lg:px-4 text-sm md:ml-2 lg:w-auto border-b">Gender</th>
                   <th className="lg:px-4 text-sm lg:w-auto border-b">Level</th>
                   <th className="lg:px-4 text-sm lg:w-auto border-b">State</th>
                   <th className="lg:px-4 text-sm lg:w-auto border-b">Action</th>
@@ -241,20 +241,20 @@ const MyComponent = () => {
                 {item.map((ele, i) => {
                   return (
                     <tr className="border-b">
-                      <td className="lg:px-14 text-sm border-b">{i + 1}</td>
-                      <td className="lg:px-14 text-sm border-b">
+                      <td className="lg:px-14 md:px-4 text-sm border-b">{i + 1}</td>
+                      <td className="lg:px-14 md:px-4 text-sm border-b">
                         {ele.surname}
                       </td>
-                      <td className="lg:px-14 text-sm border-b">
+                      <td className="lg:px-14 md:px-4 text-sm border-b">
                         {ele.firstname}
                       </td>
-                      <td className="lg:px-14 text-sm border-b">{ele.age}</td>
-                      <td className="lg:px-14 text-sm border-b">
+                      <td className="lg:px-14 md:px-4 text-sm border-b">{ele.age}</td>
+                      <td className="lg:px-14 md:px-6 text-sm border-b">
                         {ele.gender}
                       </td>
-                      <td className="lg:px-14 text-sm border-b">{ele.level}</td>
-                      <td className="lg:px-14 text-sm border-b">{ele.state}</td>
-                      <td className="lg:px-14 border-b">
+                      <td className="lg:px-16 md:px-4 text-sm border-b">{ele.level}</td>
+                      <td className="lg:px-14 text-sm md:px-4 border-b">{ele.state}</td>
+                      <td className="lg:px-14  border-b">
                         <button
                           className="lg:h-[63px] h-10 lg:w-32 rounded text-sm"
                           onClick={handleClickDownload}
