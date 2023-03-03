@@ -1,0 +1,34 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base{
+  li{
+    @apply p-4
+  }
+  button {
+    @apply text-white border bg-green-600 border-green-600
+    hover:bg-transparent hover:text-green-600 rounded-md
+  }
+}
+/* @layer utilities {
+  .scrollbar::-webkit-scrollbar {
+    width: 20px;
+    height: 20px;
+  }
+
+  .scrollbar::-webkit-scrollbar-track {
+    border-radius: 100vh;
+    background: green;
+  }
+
+  .scrollbar::-webkit-scrollbar-thumb {
+    background: green;
+    border-radius: 100vh;
+    border: 3px solid #f6f7ed;
+  }
+
+  .scrollbar::-webkit-scrollbar-thumb:hover {
+    background: green;
+  }
+} */
