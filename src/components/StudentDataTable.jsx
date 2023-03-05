@@ -4,8 +4,8 @@ import Select from "react-select";
 
 const MyComponent = () => {
   const [ages, setAges] = useState([]);
-  const [enterText, setEnterText] = useState('')
   const [enterAge, setEnterAge] = useState('')
+  const [enterState, setEnterState] = useState('')
   const [error, setError] = useState(null);
   const [item, setItem] = useState([]);
   const [level, setLevel] = useState([]);
@@ -111,19 +111,23 @@ const MyComponent = () => {
   }
 
   const handleClickFilter = () => {
+    
+
     const result = item.filter((ele) => {
-      console.log("ele.....", ele);
-      console.log("zzzz", selectedOption);
+      console.log("ele,,,,,,", ele)
       return (
         ele.age === selectedOption.label ||
-        ele.level === selectedOption.label ||
+        ele.state === selectedOption.label ||
         ele.gender === selectedOption.label ||
-        ele.state === selectedOption.label
-        
-
+     ele.level === selectedOption.label
       )
     });
     setItem(result);
+  
+
+
+
+
   };
   const handleRefresh = () => {
     fetchAllData();
@@ -166,6 +170,7 @@ const MyComponent = () => {
               <Select
                 placeholder={<div>Select age</div>}
                 className="h-20"
+                // value={enterAge}
                 onChange={handleChange}
                 options={ageOption}
                 styles={customStyles}
@@ -175,6 +180,7 @@ const MyComponent = () => {
               <Select
                 placeholder={<div>Select State</div>}
                 className="h-20"
+                // value={enterState}
                 onChange={handleChange}
                 options={stateOption}
                 styles={customStyles}
